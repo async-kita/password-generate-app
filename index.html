@@ -9,13 +9,15 @@
 
     <title>Frontend Mentor | Password generator app</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <script src="./scripts/app.js" defer></script>
   </head>
   <body>
     <main class="password-generator">
       <h1 class="password-generator__title">Password Generator</h1>
       <form
         class="password-generator__form"
-        aria-label="Password generation settings">
+        aria-label="Password generation settings"
+        data-js-password-generator>
         <div
           class="password-display" aria-live="polite"
           aria-atomic="true">
@@ -23,16 +25,19 @@
             class="password-display__output is-placeholder"
             id="generated-password"
             for="length uppercase lowercase numbers symbols"
-            aria-label="Generated password">
+            aria-label="Generated password"
+            data-js-password-generator-outup>
             P4$5W0rD!
           </output>
           <span
             class="password-display__label-copy-btn"
-            aria-hidden="true">copied</span>
+            aria-hidden="true"
+            data-js-password-generator-label-copy>copied</span>
           <button
             class="password-display__copy-btn"
             type="button"
-            aria-label="Copy password to clipboard">
+            aria-label="Copy password to clipboard"
+            data-js-password-generator-copy-btn>
             <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg"><path
                 d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
                 fill="#A4FFAF" />
@@ -51,8 +56,11 @@
             <label
               class="password-options__length-label"
               for="length">
-              Character Length <span class="length-value"
-                id="length-value">10</span>
+              Character Length
+              <span
+                class="length-value"
+                id="length-value"
+                data-js-password-generator-range-value>10</span>
             </label>
             <input
               id="length"
@@ -66,7 +74,8 @@
               aria-valuemax="20"
               aria-valuenow="10"
               aria-valuetext="10 symbols"
-              aria-labelledby="length-label">
+              aria-labelledby="length-label"
+              data-js-password-generator-range>
             <span id="length-label" hidden>
               Select a password length from 0 to 20 characters
             </span>
@@ -81,7 +90,8 @@
                 type="checkbox"
                 id="uppercase"
                 name="uppercase"
-                checked>
+                checked
+                data-js-password-generator-checkbox-uppercase>
               <label for="uppercase">Include Uppercase Letters</label>
             </div>
             <div class="checkbox-group">
@@ -89,21 +99,24 @@
                 type="checkbox"
                 id="lowercase"
                 name="lowercase"
-                checked>
+                checked
+                data-js-password-generator-checkbox-lowercase>
               <label for="lowercase">Include Lowercase Letters</label>
             </div>
             <div class="checkbox-group">
               <input
                 type="checkbox"
                 id="numbers"
-                name="numbers">
+                name="numbers"
+                data-js-password-generator-checkbox-numbers>
               <label for="numbers">Include Numbers</label>
             </div>
             <div class="checkbox-group">
               <input
                 type="checkbox"
                 id="symbols"
-                name="symbols">
+                name="symbols"
+                data-js-password-generator-checkbox-symbols>
               <label for="symbols">Include Symbols</label>
             </div>
           </fieldset>
@@ -120,7 +133,8 @@
               <div class="password-strength__wrapper-meter">
                 <span
                   class="password-strength__text"
-                  aria-hidden="true">MEDIUM</span>
+                  aria-hidden="true"
+                  data-js-password-generator-meter-text>MEDIUM</span>
                 <div
                   class="password-strength__meter"
                   role="meter"
@@ -128,11 +142,24 @@
                   aria-valuenow="2"
                   aria-valuemin="0"
                   aria-valuemax="4"
-                  aria-valuetext="MEDIUM">
-                  <span class="meter-bar" data-level="1"></span>
-                  <span class="meter-bar" data-level="2"></span>
-                  <span class="meter-bar" data-level="3"></span>
-                  <span class="meter-bar" data-level="4"></span>
+                  aria-valuetext="MEDIUM"
+                  data-js-password-generator-meter>
+                  <span
+                    class="meter-bar"
+                    data-level="1"
+                    data-js-password-generator-meter-bar></span>
+                  <span
+                    class="meter-bar"
+                    data-level="2"
+                    data-js-password-generator-meter-bar></span>
+                  <span
+                    class="meter-bar"
+                    data-level="3"
+                    data-js-password-generator-meter-bar></span>
+                  <span
+                    class="meter-bar"
+                    data-level="4"
+                    data-js-password-generator-meter-bar></span>
                 </div>
               </div>
             </div>
