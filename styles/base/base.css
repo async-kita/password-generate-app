@@ -1,0 +1,87 @@
+:root {
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-200: #e6e5ea;
+  --gray-600: #817d92;
+  --gray-700: #54535b;
+  --gray-800: #24232c;
+  --gray-850: #18171f;
+  --gray-900: #14131b;
+  --gray-950: #08070b;
+  --green-200: #a4ffaf;
+  --yellow-300: #f8cd65;
+  --orange-400: #fb7c58;
+  --red-500: #f64a4a;
+  --gradient: linear-gradient(90deg, var(--gray-900) 0%, var(--gray-950) 100%);
+
+  /* Fonts */
+  --font-family: "Jetbrains Mono", sans-serif;
+  --font-size-1: clamp(1.5rem, 1.023rem + 2.036vi, 2rem);
+  --line-height-1: clamp(2rem, 1.404rem + 2.545vi, 2.625rem);
+  --font-size-2: clamp(1rem, 0.523rem + 2.036vi, 1.5rem);
+  --line-height-2: clamp(1.25rem, 0.534rem + 3.053vi, 2rem);
+  --font-size-3: clamp(1rem, 0.881rem + 0.509vi, 1.125rem);
+  --line-height-3: clamp(1.25rem, 0.534rem + 3.053vi, 2rem);
+
+  /* Spacing */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-700: 56px;
+  --spacing-1000: 80px;
+  --spacing-1300: 104px;
+  --spacing-1600: 128px;
+  --spacing-2000: 160px;
+  --spacing-2200: 176px;
+  --spacing-2300: 184px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-3);
+  font-weight: 700;
+  color: var(--white);
+}
+
+fieldset {
+  border: none;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+svg * {
+  transition: fill 0.2s;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px dashed var(--green-200);
+  outline-offset: 4px;
+}
